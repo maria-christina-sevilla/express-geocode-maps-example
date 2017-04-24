@@ -27,4 +27,15 @@
 
 
 <!-- scripts -->
+<!-- SETTING UP MARKERS: Lastly, we need to get markers from our database and display them on the map. In order to do so, we'll add a script tag on the index.ejs template to show render points to the page. Note that it's very important to do this on a EJS template, otherwise, we can't use the EJS template tags. -->
+<!-- JSON.Stringify will convert our data to JSON data that javascript can use. -->
+<!-- The code tags syntax will display it exactly, and not escape it for html. -->
+<script>
+  var markers = <%- JSON.stringify(places) %>;
+</script>
+<!-- process.env.API_KEY_NAME will hide your personal API KEY: AIzaSyC16Nj1fYDqyvwCO8N3fn7ZCp-Ow8IBRBE from public view. -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC16Nj1fYDqyvwCO8N3fn7ZCp-Ow8IBRBE&callback=initMap">
+</script>
+
 <script src="/js/script.js"></script>
